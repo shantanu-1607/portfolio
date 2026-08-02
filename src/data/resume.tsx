@@ -36,7 +36,6 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
     { href: "/resume.pdf", icon: NotebookIcon, label: "Resume" },
   ],
   contact: {
@@ -98,8 +97,12 @@ export const DATA = {
       logoUrl: "/images/parikshak.png",
       start: "May 2026",
       end: "July 2026",
-      description:
-        "Engineered a hybrid delay-routing architecture tiering SQS with EventBridge Scheduler. Deployed an ARM64 Lambda microservice as an ECR container image via AWS CDK. Owned pre-launch black-box QA across product modules. Hardened reliability by deferring MongoDB initialization, blocking duplicate records, and rejecting unauthorized webhooks via HMAC-SHA1.",
+      description: [
+        "Engineered a hybrid delay-routing architecture tiering SQS with EventBridge Scheduler.",
+        "Deployed an ARM64 Lambda microservice as an ECR container image via AWS CDK.",
+        "Owned pre-launch black-box QA across product modules.",
+        "Hardened reliability by deferring MongoDB initialization, blocking duplicate records, and rejecting unauthorized webhooks via HMAC-SHA1."
+      ],
     }
   ],
   education: [
