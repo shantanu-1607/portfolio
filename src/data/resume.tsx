@@ -201,14 +201,14 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/images/a07faf42-15bd-48c2-8174-fbddc2101027.jpg",
+      image: "",
       video: "",
     }
   ],
   hackathons: [
     {
       title: "Flipkart GRID 8.0 & Gridlock 2.0",
-      dates: "2024",
+      dates: "2026",
       location: "Online",
       description:
         "Semi-finalist in GRID 8.0; qualified for Round 2, Gridlock 2.0 (AI traffic management, 4,500+ teams).",
@@ -217,7 +217,7 @@ export const DATA = {
     },
     {
       title: "Competitive Programming",
-      dates: "2022 - Present",
+      dates: "2025 - Present",
       location: "Online",
       description:
         "850+ problems solved; maximum rating 1790 on LeetCode and 1268 (Pupil) on Codeforces. Global Rank 1994 in LeetCode Weekly Contest 489; Global Rank 2830 in Codeforces Round 1090 (Div. 4).",
