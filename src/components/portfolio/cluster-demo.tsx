@@ -47,7 +47,12 @@ export default function ClusterDemo() {
       >
         <div className="orbit orbit-outer" />
         <div className="orbit orbit-inner" />
-        <svg className="cluster-lines" viewBox="0 0 440 290" aria-hidden="true">
+        <svg
+          className="cluster-lines"
+          viewBox="0 0 440 290"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
           <path className="connection connection-a" d="M220 66 L102 222" />
           <path className="connection connection-b" d="M220 66 L338 222" />
           <path className="connection connection-c" d="M102 222 L338 222" />

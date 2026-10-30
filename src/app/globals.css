@@ -262,13 +262,13 @@ h3,
 h1 {
   font-size: clamp(60px, 6.2vw, 87px);
   line-height: 1.06;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.035em;
 }
 em {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
   color: var(--orange);
-  letter-spacing: -0.045em;
+  letter-spacing: -0.03em;
 }
 .hero-description {
   color: var(--muted);
@@ -621,7 +621,7 @@ em {
 h2 {
   font-size: clamp(35px, 4vw, 49px);
   line-height: 1.12;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.03em;
 }
 .section-aside {
   color: var(--muted);
@@ -645,7 +645,7 @@ h2 {
 }
 h3 {
   font-size: 31px;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.025em;
   line-height: 1.15;
 }
 .project-copy h3 {
@@ -877,6 +877,7 @@ h3 {
   gap: 7px;
 }
 .replica-stack span {
+  white-space: nowrap;
   background: #2c272e;
   border: 1px solid #716377;
   padding: 8px 12px;
@@ -1086,7 +1087,7 @@ h3 {
 .about-lead {
   font-size: 32px;
   line-height: 1.3;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.025em;
 }
 .about-copy > p:not(.about-lead):not(.beyond-code) {
   color: var(--muted);
@@ -1665,7 +1666,7 @@ h3 {
     margin-bottom: 11px;
   }
   h1 {
-    font-size: clamp(56px, 10vw, 77px);
+    font-size: clamp(42px, 12vw, 77px);
   }
   .hero-description {
     font-size: 16px;
@@ -2015,7 +2016,7 @@ h3 {
     display: none;
   }
   h1 {
-    font-size: 51px;
+    font-size: clamp(40px, 12vw, 44px);
   }
   .hero-description {
     font-size: 15px;
@@ -2073,4 +2074,34 @@ h3 {
 .error-page > p:not(.eyebrow) {
   color: var(--muted);
   font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+.about-lead,
+.focus-strip p {
+  word-spacing: 0.08em;
+}
+
+@media (max-width: 760px) {
+  .flow-row {
+    gap: 10px;
+  }
+  .flow-box {
+    font-size: 14px;
+    padding: 16px 10px;
+  }
+  .replica-stack span {
+    font-size: 9px;
+    padding: 8px 10px;
+  }
+}
+@media (max-width: 370px) {
+  .flow-row {
+    gap: 7px;
+  }
+  .replica-stack span {
+    padding-inline: 7px;
+  }
 }

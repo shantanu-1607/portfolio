@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 export default function NotFound() {
   return (
-    <main className="shell error-page">
+    <main id="main-content" className="shell error-page" tabIndex={-1}>
       <p className="eyebrow">404 / UNCHARTED TERRITORY</p>
       <h1>
         This route

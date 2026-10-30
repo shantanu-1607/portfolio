@@ -47,12 +47,19 @@ export default async function OpenGraphImage() {
           fontFamily: "Clash",
           fontSize: 105,
           lineHeight: 1.08,
-          letterSpacing: "-5px",
+          letterSpacing: "-3px",
           marginTop: 72,
         }}
       >
-        <span>Good systems.</span>
-        <span style={{ color: "#f58562" }}>Built to hold.</span>
+        <div style={{ display: "flex", gap: 22 }}>
+          <span>Good</span>
+          <span>systems.</span>
+        </div>
+        <div style={{ display: "flex", gap: 22, color: "#f58562" }}>
+          <span>Built</span>
+          <span>to</span>
+          <span>hold.</span>
+        </div>
       </div>
       <div
         style={{
@@ -66,7 +73,7 @@ export default async function OpenGraphImage() {
         }}
       >
         <span>Go · Distributed systems · Open source</span>
-        <span>shantanu-1607 ↗</span>
+        <span>shantanu-1607</span>
       </div>
     </div>,
     {

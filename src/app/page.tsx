@@ -43,7 +43,9 @@ function SectionHeading({
   label,
   title,
   children,
+  id,
 }: {
+  id?: string;
   number: string;
   label: string;
   title: string;
@@ -55,7 +57,7 @@ function SectionHeading({
         <p className="eyebrow">
           <span>{number}</span> / {label}
         </p>
-        <h2>{title}</h2>
+        <h2 id={id}>{title}</h2>
       </div>
       {children}
     </div>
@@ -66,6 +68,7 @@ function RateLimiterVisual() {
   return (
     <div
       className="limiter-visual"
+      role="img"
       aria-label="Architecture: requests flow through nginx to three Go replicas and shared Redis"
     >
       <div className="visual-label mono">
@@ -107,8 +110,8 @@ export default function Page() {
   return (
     <>
       <SiteHeader />
-      <main id="home">
-        <section className="hero shell" aria-labelledby="hero-title">
+      <main id="main-content" tabIndex={-1}>
+        <section id="home" className="hero shell" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow hero-eyebrow">
               <span className="status-dot" /> BACKEND & DISTRIBUTED SYSTEMS
@@ -411,7 +414,7 @@ export default function Page() {
                 LEARNING FROM REAL CODEBASES. LEAVING THEM A LITTLE BETTER.
               </span>
               <ExternalLink
-                href="https://github.com/pulls?q=is%3Apr+author%3Ashantanu-1607+is%3Amerged"
+                href="https://github.com/search?q=is%3Apr+author%3Ashantanu-1607+is%3Amerged&type=pullrequests"
                 className="text-link"
               >
                 Contribution history
@@ -429,6 +432,7 @@ export default function Page() {
             number="03"
             label="THE PERSON BEHIND THE CODE"
             title="Curiosity is the constant."
+            id="about-title"
           />
           <div className="about-grid">
             <div className="portrait-wrap">
@@ -449,7 +453,7 @@ export default function Page() {
               </span>
             </div>
             <div className="about-copy">
-              <p className="about-lead" id="about-title">
+              <p className="about-lead">
                 I like knowing <em>why</em>
                 <br />a system works.
                 <br />

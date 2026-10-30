@@ -56,7 +56,7 @@ export default function RootLayout({
     url: profile.url,
     jobTitle: profile.role,
     sameAs: [profile.github, profile.linkedin, profile.leetcode],
-    alumniOf: {
+    affiliation: {
       "@type": "CollegeOrUniversity",
       name: "Birla Institute of Technology, Mesra",
     },
@@ -73,7 +73,7 @@ export default function RootLayout({
           <a href="#main-content" className="skip-link">
             Skip to content
           </a>
-          <div id="main-content">{children}</div>
+          {children}
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
