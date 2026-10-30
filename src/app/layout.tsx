@@ -1,93 +1,85 @@
-import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { DATA } from "@/data/resume";
-import { cn } from "@/lib/utils";
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { profile } from "@/data/portfolio";
+import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
-import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  weight: ["400", "500", "600", "700"],
+const cabinet = localFont({
+  src: "../../public/fonts/CabinetGrotesk-Medium.ttf",
+  variable: "--font-body",
+  display: "swap",
 });
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-mono",
+const clash = localFont({
+  src: "../../public/fonts/ClashDisplay-Semibold.ttf",
+  variable: "--font-display",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(DATA.url),
+  metadataBase: new URL(profile.url),
   title: {
-    default: DATA.name,
-    template: `%s | ${DATA.name}`,
+    default: `${profile.shortName} — Backend & Distributed Systems`,
+    template: `%s | ${profile.shortName}`,
   },
-  description: DATA.description,
+  description: profile.description,
+  alternates: { canonical: "/" },
   openGraph: {
-    title: `${DATA.name}`,
-    description: DATA.description,
-    url: DATA.url,
-    siteName: `${DATA.name}`,
-    locale: "en_US",
+    title: `${profile.shortName} — Good systems. Built to hold.`,
+    description: profile.description,
+    url: profile.url,
+    siteName: profile.shortName,
+    locale: "en_IN",
     type: "website",
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
   twitter: {
-    title: `${DATA.name}`,
+    title: `${profile.shortName} — Backend & Distributed Systems`,
+    description: profile.description,
     card: "summary_large_image",
   },
-  verification: {
-    google: "",
-    yandex: "",
-  },
+  robots: { index: true, follow: true },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#141413" },
+    { media: "(prefers-color-scheme: light)", color: "#f4f2eb" },
+  ],
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
+  const person = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: profile.name,
+    url: profile.url,
+    jobTitle: profile.role,
+    sameAs: [profile.github, profile.linkedin, profile.leetcode],
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Birla Institute of Technology, Mesra",
+    },
+  };
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased relative",
-          geist.variable,
-          geistMono.variable
-        )}
-      >
-        <ThemeProvider attribute="class" defaultTheme="light">
-          <TooltipProvider delayDuration={0}>
-            <div className="absolute inset-0 top-0 left-0 right-0 h-[100px] overflow-hidden z-0">
-              <FlickeringGrid
-                className="h-full w-full"
-                squareSize={2}
-                gridGap={2}
-                style={{
-                  maskImage: "linear-gradient(to bottom, black, transparent)",
-                  WebkitMaskImage: "linear-gradient(to bottom, black, transparent)",
-                }}
-              />
-            </div>
-            <div className="relative z-10 max-w-2xl mx-auto py-12 pb-24 sm:py-24 px-6">
-              {children}
-            </div>
-            <Navbar />
-          </TooltipProvider>
+      <body className={`${cabinet.variable} ${clash.variable}`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <a href="#main-content" className="skip-link">
+            Skip to content
+          </a>
+          <div id="main-content">{children}</div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(person).replace(/</g, "\\u003c"),
+            }}
+          />
         </ThemeProvider>
       </body>
     </html>

@@ -15,13 +15,13 @@ import { Csharp } from "@/components/ui/svgs/csharp";
 export const DATA = {
   name: "Shantanu Kumar Singh",
   initials: "SS",
-  url: "https://github.com/shantanu-1607",
+  url: "https://portfolio-shady17.vercel.app",
   location: "Ranchi, Jharkhand, India",
   locationLink: "https://www.google.com/maps/place/Ranchi",
   description:
     "B.Tech in Electrical and Electronics Engineering student at BIT Mesra. Full-Stack and Backend Engineer.",
   summary:
-    "I am a B.Tech student in Electrical and Electronics Engineering at BIT Mesra, deeply passionate about building scalable full-stack applications and backend systems. I recently interned as a Software Engineering Intern at Parikshak.ai, where I built hybrid delay-routing architectures and deployed microservices on AWS. I enjoy competitive programming (Max rating 1790 on LeetCode) and crafting robust systems with Go, TypeScript, Python, and React.",
+    "I am a B.Tech student in Electrical and Electronics Engineering at BIT Mesra, deeply passionate about building scalable full-stack applications and backend systems. I recently interned as a Software Engineering Intern at Parikshak.ai, where I built hybrid delay-routing architectures and deployed microservices on AWS. I enjoy competitive programming (Max rating 1890 on LeetCode) and crafting robust systems with Go, TypeScript, Python, and React.",
   avatarUrl: "/me.png",
   skills: [
     { name: "React", icon: ReactLight },
@@ -39,7 +39,7 @@ export const DATA = {
     { href: "/resume.pdf", icon: NotebookIcon, label: "Resume" },
   ],
   contact: {
-    email: "singhshantanu.0210@gmail.com",
+    email: "shantanu.singh16076@gmail.com",
     tel: "+919140094421",
     social: {
       GitHub: {
@@ -80,7 +80,7 @@ export const DATA = {
       },
       email: {
         name: "Send Email",
-        url: "mailto:singhshantanu.0210@gmail.com",
+        url: "mailto:shantanu.singh16076@gmail.com",
         icon: Icons.email,
         navbar: false,
       },
@@ -223,7 +223,7 @@ export const DATA = {
       dates: "2025 - Present",
       location: "Online",
       description:
-        "850+ problems solved; maximum rating 1790 on LeetCode and 1268 (Pupil) on Codeforces. Global Rank 1994 in LeetCode Weekly Contest 489; Global Rank 2830 in Codeforces Round 1090 (Div. 4).",
+        "1,000+ problems solved across platforms; maximum rating 1890 (Knight) on LeetCode and 1274 (Pupil) on Codeforces. Global Rank 1994 in LeetCode Weekly Contest 489; Global Rank 2830 in Codeforces Round 1090 (Div. 4).",
       image: "/images/leetcode.png",
       links: [] as any[],
     },
@@ -232,7 +232,7 @@ export const DATA = {
       dates: "School / College",
       location: "Various",
       description:
-        "Design Head at IET Coding Club, BIT Mesra; Best Speaker at Model United Nations. District-level Gold Medallist in Kho Kho and Kabaddi.",
+        "Tech Head at IET Coding Club, BIT Mesra; Best Speaker at Model United Nations. District-level Gold Medallist in Kho Kho and Kabaddi.",
       image: "/images/trophy.png",
       links: [] as any[],
     }
